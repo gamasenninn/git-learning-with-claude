@@ -16,5 +16,23 @@ dependencies = [
 mcp-calculator = "mcp_calculator_server:main"
 mcp-calculator-fast = "fastmcp_calculator_server:main"
 
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+include = [
+    "*.py",
+    "README.md",
+    "*.md"
+]
+
+[tool.hatch.build]
+include = [
+    "mcp_calculator_server.py",
+    "fastmcp_calculator_server.py",
+    "calculator.py",
+    "README.md",
+    "MCP_README.md",
+    "FastMCP_README.md"
+]
+
 [tool.uv]
 dev-dependencies = []
