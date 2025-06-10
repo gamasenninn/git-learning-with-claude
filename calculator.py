@@ -29,6 +29,10 @@ def sqrt(a):
         raise ValueError("負の数の平方根は計算できません")
     return math.sqrt(a)
 
+def power(a, b):
+    """累乗を計算する"""
+    return a ** b
+
 def main():
     print("=== 簡単な電卓プログラム ===")
     print("操作を選択してください:")
@@ -37,21 +41,27 @@ def main():
     print("3. 掛け算")
     print("4. 割り算")
     print("5. 平方根")
-    print("6. 終了")
+    print("6. 累乗")
+    print("7. 終了")
     
     while True:
-        choice = input("\n選択 (1-6): ")
+        choice = input("\n選択 (1-7): ")
         
-        if choice == '6':
+        if choice == '7':
             print("プログラムを終了します")
             break
             
-        if choice in ['1', '2', '3', '4', '5']:
+        if choice in ['1', '2', '3', '4', '5', '6']:
             try:
                 if choice == '5':
                     num = float(input("数を入力: "))
                     result = sqrt(num)
                     print(f"√{num} = {result}")
+                elif choice == '6':
+                    base = float(input("底を入力: "))
+                    exponent = float(input("指数を入力: "))
+                    result = power(base, exponent)
+                    print(f"{base} ^ {exponent} = {result}")
                 else:
                     num1 = float(input("最初の数を入力: "))
                     num2 = float(input("次の数を入力: "))
@@ -74,7 +84,7 @@ def main():
             except Exception as e:
                 print(f"予期しないエラー: {e}")
         else:
-            print("無効な選択です。1-6の数字を入力してください")
+            print("無効な選択です。1-7の数字を入力してください")
 
 if __name__ == "__main__":
     main()
