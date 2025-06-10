@@ -8,10 +8,13 @@ version = "1.0.0"
 description = "簡単なMCPサーバーのサンプル - 計算機能付き"
 readme = "README.md"
 requires-python = ">=3.9"
-dependencies = []
+dependencies = [
+    "fastmcp>=0.1.0"
+]
 
 [project.scripts]
 mcp-calculator = "mcp_calculator_server:main"
+mcp-calculator-fast = "fastmcp_calculator_server:main"
 
 [tool.uv]
 dev-dependencies = []
