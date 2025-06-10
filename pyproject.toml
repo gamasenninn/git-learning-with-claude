@@ -1,0 +1,17 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "simple-mcp-calculator"
+version = "1.0.0"
+description = "簡単なMCPサーバーのサンプル - 計算機能付き"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+mcp-calculator = "mcp_calculator_server:main"
+
+[tool.uv]
+dev-dependencies = []
